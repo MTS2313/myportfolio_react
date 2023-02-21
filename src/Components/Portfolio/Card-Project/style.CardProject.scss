@@ -1,0 +1,120 @@
+.CardProject {
+  display: flex;
+  .InitialCardContentSmall {
+    min-width: 250px;
+    height: 300px;
+    background-color: var(--md-sys-color-on-background);
+    border: 1px solid #000 ;
+    transition-duration: 200ms;
+    border-right: none;
+    &.CardTrue{
+      background-color: var(--md-sys-color-background);
+      .SkillsIcons {
+        img {
+          scale: 110%;
+        }
+      }
+      .TitleContent {
+        font-size: 1.25em;
+        color: var(--md-sys-color-on-surface);
+      }
+    }
+    .SkillsIcons {
+      box-sizing: content-box;
+      transition-duration: 200ms;
+      height: auto;
+      margin: 20px 0px;
+    }
+    &:hover {
+      background-color: var(--md-sys-color-background);
+      .SkillsIcons {
+        img {
+          scale: 110%;
+        }
+      }
+      .TitleContent {
+        font-size: 1.25em;
+        color: var(--md-sys-color-on-surface);
+      }
+    }
+    .TitleContent {
+      transition: all 200ms ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: var(--md-sys-color-surface);
+    }
+    .SkillsIcons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      img {
+        transition: all 200ms ease-in-out;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .InitialCardContentSmall {
+      display: flex;
+      min-width: 320px;
+      width: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .SkillsIcons {
+        flex-direction: row;
+        margin: 40px 0px;
+      }
+    }
+  }
+  .HoverEffectContent {
+    width: 40px;
+    transition: all 200ms ease;
+    display: flex;
+    &.CardTrue {
+      width: 100%;
+      .CardDesc {
+        display: block;
+        padding: 0px;
+        background-color: var(--md-sys-color-background);
+      }
+      .MoreContent{
+        background-color: var(--md-sys-color-on-surface);
+        svg{
+          color: var(--md-sys-color-surface);
+          transition: all 200ms ease-in-out;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .CardDesc{
+      overflow:hidden;
+      border-bottom:1px solid #000;
+      border-top:1px solid #000;
+      width: inherit;
+      background-color: var(--md-sys-color-on-background);
+      transition-duration: 200ms;
+      color: var(--md-sys-color-on-surface);
+      .BodyCard{
+        margin: 20px 25px;
+      }
+    }
+    .MoreContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      min-width: 40px;
+      position: relative;
+      border: 1px solid #000;
+      float: right;
+      transition-duration: 200ms;
+      background-color: #ffffff15;
+    }
+  }
+}

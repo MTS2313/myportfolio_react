@@ -1,0 +1,138 @@
+$--margin-bottom-default: 2.5rem;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) or (prefers-color-scheme: light) {
+  .PortfolioPageContent {
+    background-color: var(--md-sys-color-background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .HeaderContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 5%;
+      border-top: 10px solid #000;
+      border-bottom: 10px solid #000;
+      margin-bottom: $--margin-bottom-default;
+      .TitleH3 {
+        @media screen and (max-width: 600px) {
+          font-size: medium;
+        }
+        color: var(--md-sys-color-inverse-surface);
+        font-weight: 200;
+      }
+    }
+    .AboutMeContent {
+      display: grid;
+      height: 50%;
+      margin: 0 5% $--margin-bottom-default 5%;
+      grid-template-columns: auto auto;
+      row-gap: 25px;
+      @media screen and (max-width: 765px) {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+      }
+      .ListContent {
+        ul {
+          list-style-type: none;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          li,
+          a {
+            color: var(--md-sys-color-inverse-surface);
+            font-size: medium;
+            @media screen and (max-width: 600px) {
+              font-size: small;
+            }
+          }
+          li a {
+            text-decoration: none;
+            opacity: 70%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 100;
+            transition: all 500ms ease;
+            width: fit-content;
+            svg {
+              transition: all 400ms ease;
+            }
+            &:hover {
+              color: var(--md-sys-color-on-primary-container);
+              svg {
+                color: var(--md-sys-color-on-primary-container);
+              }
+            }
+          }
+        }
+      }
+      .DescContent {
+        @media screen and (min-width: 766px) {
+          grid-area: 2/1/2/3;
+        }
+        .aboutMeDesc {
+          color: var(--md-sys-color-inverse-surface);
+          font-size: medium;
+          font-weight: 300;
+        }
+      }
+    }
+    .TableContent {
+      width: inherit;
+      height: inherit;
+      table {
+        .SkillCel {
+          td {
+            opacity: 70%;
+            color: var(--md-sys-color-inverse-surface);
+            text-align: center;
+            height: 30px;
+            margin: 10px 5px;
+          }
+        }
+      }
+      table {
+        width: 100%;
+        height: inherit;
+        .StyleHeadTab {
+          width: inherit;
+          height: inherit;
+          td {
+            height: 30px;
+            text-align: center;
+            background-color: var(--md-sys-color-on-background);
+            color: var(--md-sys-color-inverse-on-surface);
+          }
+        }
+      }
+      table,
+      .StyleHeadTab,
+      td {
+        border: 2px solid var(--md-sys-color-on-background);
+        opacity: 90%;
+        border-collapse: collapse;
+      }
+    }
+    .ProjectsContent {
+      width: auto;
+      min-height: 30%;
+      margin: 0% 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: $--margin-bottom-default;
+      @media screen and (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
