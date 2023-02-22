@@ -8,13 +8,10 @@ import jwt from "../../svg/jwt.svg";
 import html from "../../svg/html.svg";
 const Projects = [
   {
-    Name:"Meu Portfolio",
-    SkillsIcons:[sass,reactjs]
-  },
-  {
     Name: "To-Do Api",
     SkillsIcons: [expressjs,nodejs,jwt],
     Link: "https://github.com/MTS2313/BlockNote_api",
+    AboutPage:"#"
   },
 ];
 

@@ -1,9 +1,12 @@
 .CardProject {
   display: flex;
+  .MobileIconsContent{
+    display: none;
+  }
   .InitialCardContentSmall {
     min-width: 250px;
-    height: 300px;
-    background-color: var(--md-sys-color-on-background);
+    min-height: 200px;
+    background-color: var(--md-sys-color-secondary-container);
     border: 1px solid #000 ;
     transition-duration: 200ms;
     border-right: none;
@@ -16,7 +19,7 @@
       }
       .TitleContent {
         font-size: 1.25em;
-        color: var(--md-sys-color-on-surface);
+        color: var(--md-sys-color-inverse-surface);
       }
     }
     .SkillsIcons {
@@ -25,25 +28,13 @@
       height: auto;
       margin: 20px 0px;
     }
-    &:hover {
-      background-color: var(--md-sys-color-background);
-      .SkillsIcons {
-        img {
-          scale: 110%;
-        }
-      }
-      .TitleContent {
-        font-size: 1.25em;
-        color: var(--md-sys-color-on-surface);
-      }
-    }
     .TitleContent {
       transition: all 200ms ease-in-out;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2em;
-      color: var(--md-sys-color-surface);
+      color: var(--md-sys-color-inverse-surface);
     }
     .SkillsIcons {
       display: flex;
@@ -65,10 +56,10 @@
       width: auto;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       .SkillsIcons {
         flex-direction: row;
         margin: 40px 0px;
+        height: 100%;
       }
     }
   }
@@ -77,8 +68,9 @@
     transition: all 200ms ease;
     display: flex;
     &.CardTrue {
-      width: 100%;
+      width: 50vw;
       .CardDesc {
+        transition: all 200ms ease;
         display: block;
         padding: 0px;
         background-color: var(--md-sys-color-background);
@@ -97,7 +89,8 @@
       border-bottom:1px solid #000;
       border-top:1px solid #000;
       width: inherit;
-      background-color: var(--md-sys-color-on-background);
+      max-width: 50vw;
+      background-color: var(--md-sys-color-secondary-container);
       transition-duration: 200ms;
       color: var(--md-sys-color-on-surface);
       .BodyCard{
@@ -115,6 +108,34 @@
       float: right;
       transition-duration: 200ms;
       background-color: #ffffff15;
+    }
+  }
+  @media (max-width:650px) {
+    &{
+      flex-direction: column;
+      .HoverEffectContent{
+          display: none;
+      }
+      &.CardProject{
+        .InitialCardContentSmall{
+          border-right: 1px solid #000;
+          border-bottom: none;
+        }
+        .MobileIconsContent{
+          width: inherit;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--md-sys-color-secondary-container);
+          border: 1px solid #000;
+          border-top: none;
+          gap: 20px;
+          a>svg{
+            color: #000;
+          }
+        }
+      }
     }
   }
 }

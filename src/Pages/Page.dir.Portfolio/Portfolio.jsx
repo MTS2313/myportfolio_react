@@ -104,7 +104,7 @@ function Portfolio() {
       <div className="ProjectsContent">
         {
           Projects.map((e,Cardindex)=>{
-            return <CardProject Name={e.Name} ProjectsArr={e.SkillsIcons}  key={`Card${Cardindex}`} id={Cardindex}/>
+            return <CardProject Name={e.Name} ProjectsArr={e.SkillsIcons}  key={`Card${Cardindex}`} id={Cardindex} GitLink={e.Link} AboutLink={e.AboutPage}/>
           })
         }
       </div>

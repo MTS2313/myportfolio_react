@@ -81,12 +81,14 @@ body {
           color: var(--md-sys-color-inverse-surface);
           font-size: medium;
           font-weight: 300;
+          max-width: 70vw;
         }
       }
     }
     .TableContent {
       width: inherit;
       height: inherit;
+      max-width: 550px;
       table {
         .SkillCel {
           td {
