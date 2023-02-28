@@ -1,40 +1,42 @@
 .CardProject {
   display: flex;
-  .MobileIconsContent{
-    display: none;
-  }
   .InitialCardContentSmall {
     min-width: 250px;
     min-height: 200px;
     background-color: var(--md-sys-color-secondary-container);
-    border: 1px solid #000 ;
+    border: 1px solid #000;
     transition-duration: 200ms;
     border-right: none;
-    &.CardTrue{
-      background-color: var(--md-sys-color-background);
-      .SkillsIcons {
-        img {
-          scale: 110%;
-        }
-      }
-      .TitleContent {
-        font-size: 1.25em;
-        color: var(--md-sys-color-inverse-surface);
-      }
-    }
     .SkillsIcons {
       box-sizing: content-box;
       transition-duration: 200ms;
       height: auto;
       margin: 20px 0px;
     }
-    .TitleContent {
-      transition: all 200ms ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      color: var(--md-sys-color-inverse-surface);
+    .HeaderMobileProjectCard {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .HeaderMobileProjectCard {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        .Info {
+          .Title {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: var(--md-sys-color-inverse-surface);
+            font-size: 1.2rem;
+          }
+          .Stack {
+            margin: 0;
+            padding: 0;
+            font-size: 0.8rem;
+            color: var(--md-sys-color-tertiary);
+          }
+        }
+      }
     }
     .SkillsIcons {
       display: flex;
@@ -49,92 +51,46 @@
       }
     }
   }
-  @media (max-width: 600px) {
-    .InitialCardContentSmall {
-      display: flex;
-      min-width: 320px;
-      width: auto;
-      flex-direction: column;
-      align-items: center;
-      .SkillsIcons {
-        flex-direction: row;
-        margin: 40px 0px;
-        height: 100%;
-      }
-    }
+  .MoreInfoProject {
+    display: none;
   }
-  .HoverEffectContent {
-    width: 40px;
-    transition: all 200ms ease;
-    display: flex;
-    &.CardTrue {
-      width: 50vw;
-      .CardDesc {
-        transition: all 200ms ease;
-        display: block;
-        padding: 0px;
-        background-color: var(--md-sys-color-background);
-      }
-      .MoreContent{
-        background-color: var(--md-sys-color-on-surface);
-        svg{
-          color: var(--md-sys-color-surface);
-          transition: all 200ms ease-in-out;
-          transform: rotate(180deg);
-        }
-      }
-    }
-    .CardDesc{
-      overflow:hidden;
-      border-bottom:1px solid #000;
-      border-top:1px solid #000;
-      width: inherit;
-      max-width: 50vw;
+  @media (min-width: 600px) {
+    .MoreInfoProject {
+      display: flex;
+      flex-direction: column;
+      min-width: 40vw;
+      max-width: 55vw;
+      min-height: inherit;
+      width: fit-content;
       background-color: var(--md-sys-color-secondary-container);
-      transition-duration: 200ms;
-      color: var(--md-sys-color-on-surface);
-      .BodyCard{
-        margin: 20px 25px;
-      }
-    }
-    .MoreContent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      min-width: 40px;
-      position: relative;
       border: 1px solid #000;
-      float: right;
-      transition-duration: 200ms;
-      background-color: #ffffff15;
-    }
-  }
-  @media (max-width:650px) {
-    &{
-      flex-direction: column;
-      .HoverEffectContent{
-          display: none;
-      }
-      &.CardProject{
-        .InitialCardContentSmall{
-          border-right: 1px solid #000;
-          border-bottom: none;
+      padding: 20px 30px;
+      .HeaderProject {
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+        .Name {
+          margin: 0;
+          padding: 0;
+          font-weight: bold;
+          color: var(--md-sys-color-inverse-surface);
+          font-size: 1.2rem;
         }
-        .MobileIconsContent{
-          width: inherit;
-          height: 50px;
+        .Type {
+          margin: 0;
+          padding: 0;
+          font-size: 0.8rem;
+          color: var(--md-sys-color-tertiary);
+        }
+        .LinksConteiner {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: var(--md-sys-color-secondary-container);
-          border: 1px solid #000;
-          border-top: none;
-          gap: 20px;
-          a>svg{
-            color: #000;
-          }
+          gap: 10px;
         }
+      }
+      .AboutProject {
+        text-align: justify;
+
+        color: var(--md-sys-color-inverse-surface);
       }
     }
   }

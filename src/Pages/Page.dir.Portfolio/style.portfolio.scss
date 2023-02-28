@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) or (prefers-color-scheme: light) {
@@ -81,14 +82,16 @@ body {
           color: var(--md-sys-color-inverse-surface);
           font-size: medium;
           font-weight: 300;
-          max-width: 70vw;
+          text-align: justify;
+          min-width: 300px;
+          max-width: calc(55vw + 300px);
         }
       }
     }
     .TableContent {
       width: inherit;
       height: inherit;
-      max-width: 550px;
+      max-width: 300px;
       table {
         .SkillCel {
           td {

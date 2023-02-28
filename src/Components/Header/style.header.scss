@@ -1,0 +1,79 @@
+header {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5%;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--md-sys-color-on-surface);
+  margin-bottom: 10px;
+  .TitleContent {
+    h2 {
+      color: var(--md-sys-color-on-surface);
+    }
+  }
+  .MobileMenuConteiner{
+    display: none;
+  }
+  @media (max-width:600px) {
+    .PageLinks{
+      display: none;
+    }
+    .MobileMenuConteiner{
+      display: flex;
+    }
+  }
+  .PageLinks {
+    ul {
+      display: flex;
+      gap: 20px;
+      li {
+        list-style: none;
+        a {
+          color: var(--md-sys-color-on-surface);
+          text-decoration: none;
+        }
+        &.DropdawnLi {
+          display: flex;
+          align-items: center;
+          .DropdawnConteiner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .LinkList {
+              display: none;
+              position: absolute;
+              top: calc(60px - 20px);
+              width: 150px;
+              background-color: var(--md-sys-color-background);
+              flex-direction: column;
+              z-index: 1;
+              border: 1px solid var(--md-sys-color-on-background);
+              gap: 5px;
+              .LinkTool {
+                border-left: 2px solid #ff7200;
+              }
+            }
+            &:hover {
+              .LinkList {
+                display: flex;
+              }
+            }
+            button {
+              border: none;
+              background-color: transparent;
+              color: var(--md-sys-color-on-surface);
+              font-size: 1rem;
+              cursor: pointer;
+              width: 100px;
+              background-color: var(--md-sys-color-background);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

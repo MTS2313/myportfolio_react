@@ -3,6 +3,7 @@ import "./style.portfolio.scss";
 import { MdOutlineLink } from "react-icons/md";
 import Projects from "../../assets/db/Portfolio/Card";
 import CardProject from "../../Components/Portfolio/Card-Project/CardProject";
+import Header from "../../Components/Header/Header";
 function Portfolio() {
   const SkillsArr = [
     {
@@ -28,9 +29,7 @@ function Portfolio() {
   ];
   return (
     <div className="PortfolioPageContent">
-      <div className="HeaderContent">
-        <h2 className="TitleH3">Programador - Front-End</h2>
-      </div>
+      <Header TitleHeader="Desenvolvedor Front-End" />
       <div className="AboutMeContent">
         <div className="ListContent">
           <ul>
@@ -71,15 +70,11 @@ function Portfolio() {
           <table>
             <tr className="StyleHeadTab">
               <td>Habilidade</td>
-              <td>Nivel</td>
-              <td>Tempo de Uso/Estudo(Em Anos)</td>
             </tr>
             {SkillsArr.map((i) => {
               return (
                 <tr className="SkillCel">
                   <td>{i.skill}</td>
-                  <td>{i.level}</td>
-                  <td>{i.Attime}</td>
                 </tr>
               );
             })}
@@ -87,26 +82,40 @@ function Portfolio() {
         </div>
         <div className="DescContent">
           <p class="aboutMeDesc">
-            Apaixonado por tecnologia sempre fui muito curioso sobre tudo
-            relacionado a área. Quando adentrei ao ensino médio tive de fato um
-            início no mundo da programação aonde iniciei os fundamentos para o
-            desenvolvimento web e comecei a praticar hoje fazendo faculdade de
-            análise e desenvolvimento de sistemas e praticando em meus projetos
-            e também em projetos (open-source) presentes no GitHub por exemplo,
-            já tenho um conhecimento avançado em programação em geral e estou me
-            especializando no desenvolvimento web sonho em um dia trabalhar com
-            desenvolvimento de games porem esse caminho e grande e devo me
-            aprofundar bem em tudo com isso venho diariamente estudando para
-            estar entre os melhores desenvolvedores do mercado.
+            Sou apaixonado por tecnologia e extremamente curioso sobre tudo
+            relacionado a essa área. Desde que entrei no ensino médio, comecei a
+            me interessar pelo mundo da programação, onde aprendi os fundamentos
+            do desenvolvimento web e comecei a praticar. Agora estou cursando
+            Análise e Desenvolvimento de Sistemas e continuo desenvolvendo
+            projetos pessoais, bem como contribuindo para projetos de código
+            aberto no GitHub.
+            <br />
+            <br />
+            Com meu amplo conhecimento em programação em geral e especialização
+            em desenvolvimento web, estou me esforçando para estar entre os
+            melhores desenvolvedores do mercado. Meu sonho é trabalhar com
+            desenvolvimento de jogos, mas reconheço que este é um caminho
+            desafiador que requer um estudo aprofundado. Por isso, dedico meu
+            tempo diariamente para estudar e me aprimorar, e tenho certeza de
+            que alcançarei meus objetivos profissionais.
           </p>
         </div>
       </div>
-      <div className="ProjectsContent">
-        {
-          Projects.map((e,Cardindex)=>{
-            return <CardProject Name={e.Name} ProjectsArr={e.SkillsIcons}  key={`Card${Cardindex}`} id={Cardindex} GitLink={e.Link} AboutLink={e.AboutPage}/>
-          })
-        }
+      <div className="ProjectsContent" id="Projects">
+        {Projects.map((e, Cardindex) => {
+          return (
+            <CardProject
+              Name={e.Name}
+              Skills={e.SkillsIcons}
+              key={`Card${Cardindex}`}
+              id={Cardindex}
+              RepoLink={e.Link}
+              AboutLink={e.AboutPage}
+              Description={e.Description}
+              TypeProject={e.Stack}
+            />
+          );
+        })}
       </div>
     </div>
   );

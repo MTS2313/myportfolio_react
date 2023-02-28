@@ -1,48 +1,70 @@
 import React from "react";
 import "./style.CardProject.scss";
-import { MdNavigateNext } from "react-icons/md";
-import { FaGithub, FaLink, FaPlus } from "react-icons/fa";
-function CardProject({ Name, ProjectsArr, id, GitLink, AboutLink }) {
-  function GetCard(e) {
-    let CardState = false;
-    document.getElementById(`IdBtnOpenCard${id}`).classList.toggle("CardTrue");
-    document.getElementById(`MainCardID${id}`).classList.toggle("CardTrue");
-  }
+import { FaExternalLinkAlt, FaGithub, FaPlus } from "react-icons/fa";
+function CardProject({
+  Name: ProjectName,
+  Skills: SkillsList,
+  id: Id,
+  RepoLink: GitHubLink,
+  AboutLink: AboutProject,
+  TypeProject: StackUse,
+  Description:Desc,
+}) {
   return (
     <div className="CardProject">
-      <div className="InitialCardContentSmall" id={`MainCardID${id}`}>
-        <div className="TitleContent">
-          <p>{Name}</p>
+      <div className="InitialCardContentSmall">
+        <div className="HeaderMobileProjectCard">
+          <div className="Info">
+            <p className="Title">{ProjectName}</p>
+            <p className="Stack">{StackUse}</p>
+          </div>
+          <div className="IconContent">
+          {GitHubLink ? (
+          <a href={GitHubLink} target="_blank">
+            <FaGithub fontSize={25} color="#000"/>
+          </a>
+        ) : (
+          ""
+        )}
+        {AboutProject ? (
+          <a href={AboutProject} target="_blank">
+            <FaExternalLinkAlt fontSize={25} color="#000" />
+          </a>
+        ) : (
+          ""
+        )}
+          </div>
         </div>
         <div className="SkillsIcons">
-          {ProjectsArr.map((e, indexSkil) => {
+          {SkillsList.map((e, indexSkil) => {
             return <img src={e} key={indexSkil} />;
           })}
         </div>
       </div>
-      <div className="HoverEffectContent" id={`IdBtnOpenCard${id}`}>
-        <div className="CardDesc">
-          <div className="BodyCard">Em Desenvolvimento...</div>
+      <div className="MoreInfoProject">
+        <div className="HeaderProject">
+          <div>
+          <p className="Name">{ProjectName}</p>
+          <p className="Type">{StackUse}</p>
+          </div>
+          <div className="LinksConteiner">
+          {GitHubLink ? (
+          <a href={GitHubLink} target="_blank">
+            <FaGithub fontSize={25} color="#000"/>
+          </a>
+        ) : (
+          ""
+        )}
+        {AboutProject ? (
+          <a href={AboutProject} target="_blank">
+            <FaExternalLinkAlt fontSize={25} color="#000" />
+          </a>
+        ) : (
+          ""
+        )}
+          </div>
         </div>
-        <button className="MoreContent" onClick={() => GetCard(id)}>
-          <MdNavigateNext fontSize={30} />
-        </button>
-      </div>
-      <div className="MobileIconsContent">
-        {GitLink ? (
-          <a href={GitLink} target="_blank">
-            <FaGithub fontSize={30}/>
-          </a>
-        ) : (
-          ""
-        )}
-        {AboutLink ? (
-          <a href={AboutLink} target="_blank">
-            <FaPlus fontSize={30}/>
-          </a>
-        ) : (
-          ""
-        )}
+        <p className="AboutProject">{Desc}</p>
       </div>
     </div>
   );

@@ -1,0 +1,36 @@
+.OpenMenuContent {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.MenuConteinerMobile {
+  display: none;
+  &.true {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #00000088;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    .Menu {
+      position: relative;
+      float: right;
+      width: 70vw;
+      height: 100vh;
+      background-color: #fff;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      a {
+        color: var(--md-sys-color-surface);
+      }
+    }
+    .CloseContent {
+      width: 30vw;
+      height: 100vh;
+    }
+  }
+}
