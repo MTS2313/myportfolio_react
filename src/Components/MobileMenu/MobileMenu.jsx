@@ -16,21 +16,21 @@ function MobileMenu({ LinksMenu }) {
       <div className={`MenuConteinerMobile ${MenuState ? "true" : "false  "}`}>
         <div className="CloseContent" onClick={HandleMenu}></div>
         <div className="Menu">
-          {LinksMenu.map((e) => {
+          {LinksMenu.map((e,index) => {
             return e.isGrup ? (
-              <optgroup label={e.name}>
-                {e.links.map((e) => {
+              <optgroup key={index} label={e.name}>
+                {e.links.map((e,index) => {
                   return (
-                    <option>
-                      <option>
+                    <option key={index} value={e.name}>
                         <a href={e.link}>{e.name}</a>
-                      </option>
+                      
                     </option>
                   );
                 })}
               </optgroup>
             ) : (
-              <a href={e.link}>{e.name}</a>
+              <a href={e.link} key={index}>{e.name}</a>
+            
             );
           })}
         </div>
