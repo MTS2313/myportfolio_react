@@ -20,19 +20,6 @@ function AboutExatasChat() {
     <div className="AboutExatasChat" id="IdBodyAboutExChat">
       <Header TitleHeader="Exatas Chat" />
       <div className="Body">
-        <div className="LinksContent">
-          <ul  >
-            <li>
-              <a href="#Objetivo">Objetivo</a>
-            </li>
-            <li>
-              <a href="#Wchat">Porque um chat</a>
-            </li>
-            <li>
-              <a href="#Screenshot">Screenshot</a>
-            </li>
-          </ul>
-        </div>
         <div className="AboutContent">
           <h3 id="Objetivo">Objetivo</h3>
           <p>

@@ -1,19 +1,25 @@
 import React from "react";
 
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Portfolio from "./Pages/Page.dir.Portfolio/Portfolio";
 import AboutExatasChat from "./Pages/Page.dir.ExatasChat/AboutExatasChat";
+import CoinConversor from "./Pages/Page.dir.CoinConversor/CoinConversor";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Router basename="/">
-    <Switch>
-      <Route exact path="/">
-        <Portfolio/>
-      </Route>
-      <Route path="/exataschat">
-        <AboutExatasChat/>
-      </Route>
-    </Switch>
-  </Router>
+  <React.StrictMode>
+    <Router basename="/">
+      <Switch>
+        <Route exact path="/">
+          <Portfolio />
+        </Route>
+        <Route path="/exataschat">
+          <AboutExatasChat />
+        </Route>
+        <Route path="/coinconversor">
+          <CoinConversor/>
+        </Route>
+      </Switch>
+    </Router>
+  </React.StrictMode>
 );

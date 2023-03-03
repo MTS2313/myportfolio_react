@@ -20,7 +20,7 @@ const Projects = [
     Name: "Exatas-Chat",
     Stack: "Front-End",
     SkillsIcons: [reactjs, sass, mui],
-    AboutPage: "exataschat",
+    AboutPage: "#/exataschat",
     Description:
       "Este projeto tem como objetivo melhorar a eficiência e o controle das empresas que oferecem serviços de assistência técnica, fornecendo uma interface rápida e simples. O projeto permitirá redirecionar todas as conversas do WhatsApp para um ou vários funcionários e também permitirá dividir em setores para fornecer um atendimento de excelência.",
   },

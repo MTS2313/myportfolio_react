@@ -29,12 +29,8 @@ function Header({
       isGrup: true,
       links: [
         {
-          name: "Em Desenvolvimento",
-          link: "#",
-        },
-        {
-          name: "Em Desenvolvimento",
-          link: "#",
+          name: "Conversor de Moedas",
+          link: "#/coinconversor",
         },
       ],
     },
