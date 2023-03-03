@@ -20,14 +20,14 @@ function CardProject({
           </div>
           <div className="IconContent">
           {GitHubLink ? (
-          <a href={GitHubLink} target="_blank">
+          <a href={GitHubLink} >
             <FaGithub fontSize={25} color="#000"/>
           </a>
         ) : (
           ""
         )}
         {AboutProject ? (
-          <a href={AboutProject} target="_blank">
+          <a href={AboutProject} >
             <FaExternalLinkAlt fontSize={25} color="#000" />
           </a>
         ) : (
@@ -49,14 +49,14 @@ function CardProject({
           </div>
           <div className="LinksConteiner">
           {GitHubLink ? (
-          <a href={GitHubLink} target="_blank">
+          <a href={GitHubLink} >
             <FaGithub fontSize={25} color="#000"/>
           </a>
         ) : (
           ""
         )}
         {AboutProject ? (
-          <a href={AboutProject} target="_blank">
+          <a href={AboutProject} >
             <FaExternalLinkAlt fontSize={25} color="#000" />
           </a>
         ) : (

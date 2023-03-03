@@ -5,7 +5,6 @@ function MobileMenu({ LinksMenu }) {
   const [MenuState, setMenuState] = useState(false);
   function HandleMenu() {
     let MenuStateSc = MenuState;
-    console.log(MenuStateSc);
     setMenuState(!MenuStateSc);
   }
   return (
@@ -17,20 +16,27 @@ function MobileMenu({ LinksMenu }) {
         <div className="CloseContent" onClick={HandleMenu}></div>
         <div className="Menu">
           {LinksMenu.map((e) => {
+            const key = e.id; 
             return e.isGrup ? (
-              <optgroup label={e.name}>
-                {e.links.map((e) => {
-                  return (
-                    <option>
-                      <option>
-                        <a href={e.link}>{e.name}</a>
-                      </option>
-                    </option>
-                  );
-                })}
-              </optgroup>
+              <div key={key}>
+                <span>{e.name}</span>
+                {e.links && (
+                  <ul>
+                    {e.links.map((link) => {
+                      const linkKey = link.id;
+                      return (
+                        <li  value={link.name}>
+                          <a key={linkKey} href={link.link}>{link.name}</a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
             ) : (
-              <a href={e.link}>{e.name}</a>
+              <a href={e.link} key={key}>
+                {e.name}
+              </a>
             );
           })}
         </div>

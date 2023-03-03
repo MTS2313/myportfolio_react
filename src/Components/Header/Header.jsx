@@ -29,12 +29,8 @@ function Header({
       isGrup: true,
       links: [
         {
-          name: "Em Desenvolvimento",
-          link: "#",
-        },
-        {
-          name: "Em Desenvolvimento",
-          link: "#",
+          name: "Conversor de Moedas",
+          link: "#/coinconversor",
         },
       ],
     },
@@ -58,9 +54,9 @@ function Header({
             <div className="DropdawnConteiner">
               <button className="DropdawnOpen">Ferramentas</button>
               <ul className="LinkList">
-                {HeaderLinks[1].links.map((i) => {
+                {HeaderLinks[1].links.map((i,index) => {
                   return (
-                    <a href={i.link} className="LinkTool">
+                    <a href={i.link} className="LinkTool" key={index}>
                       <li className="ToolItem">{i.name}</li>
                     </a>
                   );

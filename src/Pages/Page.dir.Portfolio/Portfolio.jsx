@@ -8,23 +8,18 @@ function Portfolio() {
   const SkillsArr = [
     {
       skill: "NodeJs",
-      level: "1",
-      Attime: 1.5,
     },
     {
       skill: "Python",
-      level: "1",
-      Attime: "1.5",
     },
     {
       skill: "Express Js",
-      level: "2",
-      Attime: "1",
     },
     {
       skill: "ReactJs",
-      level: "3",
-      Attime: "1.5",
+    },
+    {
+      skill: "Sass",
     },
   ];
   return (
@@ -37,7 +32,7 @@ function Portfolio() {
             <li>
               <a
                 href="mailto:dev.mailsystem.com@gmail.com"
-                class="LinkaContent"
+                className="LinkaContent"
               >
                 <MdOutlineLink fontSize={20} />
                 dev.mailsystem.com@gmail.com
@@ -47,7 +42,7 @@ function Portfolio() {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/mateus-pereira-santana-da-silva-742730210/"
-                class="LinkaContent"
+                className="LinkaContent"
               >
                 <MdOutlineLink fontSize={20} />
                 Linkedin
@@ -58,7 +53,7 @@ function Portfolio() {
                 href="https://github.com/MTS2313"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="LinkaContent"
+                className="LinkaContent"
               >
                 <MdOutlineLink fontSize={20} />
                 GitHub
@@ -68,20 +63,22 @@ function Portfolio() {
         </div>
         <div className="TableContent">
           <table>
-            <tr className="StyleHeadTab">
-              <td>Habilidade</td>
-            </tr>
-            {SkillsArr.map((i) => {
-              return (
-                <tr className="SkillCel">
-                  <td>{i.skill}</td>
-                </tr>
-              );
-            })}
+            <tbody>
+              <tr className="StyleHeadTab">
+                <td>Habilidade</td>
+              </tr>
+              {SkillsArr.map((i, index) => {
+                return (
+                  <tr className="SkillCel" key={index}>
+                    <td>{i.skill}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
         <div className="DescContent">
-          <p class="aboutMeDesc">
+          <p className="aboutMeDesc">
             Sou apaixonado por tecnologia e extremamente curioso sobre tudo
             relacionado a essa área. Desde que entrei no ensino médio, comecei a
             me interessar pelo mundo da programação, onde aprendi os fundamentos
